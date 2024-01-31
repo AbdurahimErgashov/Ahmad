@@ -13,7 +13,7 @@ function Triangle(event) {
         let nNum = Arr[1];
         let eNum = Arr[0];
         if ((eNum+nNum>hNum&&nNum-eNum<hNum)||(eNum+hNum>nNum&&hNum-eNum<nNum)||(nNum+hNum>eNum&&hNum-nNum<eNum)) {
-            let p = (eNum+nNum+hNum)/2;
+            let p = (eNum+nNum+hNum);
             let S = (Math.sqrt(p*(p-eNum)*(p-nNum)*(p-hNum)));
             document.querySelector(".peremetr").textContent = p + "sm";
             document.querySelector(".yuza").textContent = S.toFixed(1) + "sm^2";
