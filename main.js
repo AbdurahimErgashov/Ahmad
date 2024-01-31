@@ -7,14 +7,9 @@ function Triangle(event) {
     event.preventDefault();
 
     if (/^[1-9][0-9]{0,4}$/.test(A) && /^[1-9][0-9]{0,4}$/.test(B) && /^[1-9][0-9]{0,4}$/.test(C)) {
-        let Arr = [A,B,C];
-        Arr.sort((a, b) => a - b);
-        let hNum = Arr[2];
-        let nNum = Arr[1];
-        let eNum = Arr[0];
-        if ((eNum+nNum>hNum&&nNum-eNum<hNum)||(eNum+hNum>nNum&&hNum-eNum<nNum)||(nNum+hNum>eNum&&hNum-nNum<eNum)) {
-            let p = (eNum+nNum+hNum)/2;
-            let S = (Math.sqrt(p*(p-eNum)*(p-nNum)*(p-hNum)));
+        if ((A+B>C&&Math.abs(B-A)<C)||(A+C>B&&Math.abs(C-A)<B)||(B+C>A&&Math.abs(C-B)<A)) {
+            let p = (A+B+C)/2;
+            let S = (Math.sqrt(p*(p-A)*(p-B)*(p-C)));
             document.querySelector(".peremetr").textContent = p + "sm";
             document.querySelector(".yuza").textContent = S.toFixed(1) + "sm^2";
         } else{
